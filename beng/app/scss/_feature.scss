@@ -1,0 +1,68 @@
+.feature {
+  background-color: $lightGrayishBlue;
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include breakpoint-up(large) {
+      display: flex;
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+    text-align: center;
+    @include breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    @include breakpoint-up(large) {
+      margin: 3rem 0;
+    }
+  }
+  &__title {
+    margin: 1em 0;
+    color: $darkBlue;
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+
+      margin-bottom: 1em;
+    }
+  }
+
+  &__description {
+    color: $grayishBlue;
+    font-size: 1rem;
+
+    @include breakpoint-up(large) {
+      color: $grayishBlue;
+      font-size: 1rem;
+    }
+  }
+
+  &__intro {
+    text-align: center;
+    margin: 2em 0;
+    @include breakpoint-up(large) {
+      width: 60%;
+      text-align: left;
+    }
+
+    h2 {
+      color: $darkBlue;
+      font-weight: 400;
+    }
+    p {
+      color: $grayishBlue;
+    }
+  }
+}

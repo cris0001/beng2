@@ -1,0 +1,103 @@
+.hero {
+  background-color: $veryLightGray;
+
+  .container {
+    @include breakpoint-up(large) {
+      display: flex;
+
+      align-items: center;
+    }
+  }
+  &__text {
+    @include breakpoint-up(large) {
+      flex: 2;
+      text-align: left;
+      h1 {
+        font-size: 3.125rem;
+      }
+    }
+    text-align: center;
+    h1 {
+      font-weight: 300;
+      font-size: 2.3125rem;
+      color: $darkBlue;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      margin-bottom: 2.25rem;
+      line-height: 1.5;
+
+      color: $grayishBlue;
+    }
+  }
+  &__img {
+    position: relative;
+    background-image: url('/images/bg-intro-mobile.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+    @include breakpoint-up(medium) {
+      min-height: 25rem;
+      background-position: center 60%;
+    }
+    @include breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      height: 41em;
+      background-image: none;
+      // background-image: url('/images/bg-intro-desktop.svg');
+      //   background-position: left center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url('/images/bg-intro-desktop.svg');
+      background-size: 95%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      @include breakpoint-up(large) {
+        content: '';
+        position: absolute;
+        height: 100%;
+        // width: 100%;
+        background-image: url('/images/bg-intro-desktop.svg');
+        //  background-size: 95%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        width: 150%;
+        background-size: 122%;
+        background-position: 0% 120%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: url('/images/image-mockups.png');
+      background-size: 95%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      @include breakpoint-up(medium) {
+        background-size: 55%;
+      }
+
+      @include breakpoint-up(large) {
+        width: 120%;
+        height: 120%;
+        background-size: 94%;
+        background-position: center -420%;
+        background-repeat: no-repeat;
+        left: 22%;
+      }
+    }
+  }
+}
